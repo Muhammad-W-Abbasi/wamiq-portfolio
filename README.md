@@ -21,7 +21,7 @@ This site serves as a personal landing page showcasing projects, experience, and
 ## Live Demo
 
 Hosted on Netlify:  
-*(Add your Netlify link here once deployed)*
+https://wamiq-portfolio.netlify.app/
 
 ---
 

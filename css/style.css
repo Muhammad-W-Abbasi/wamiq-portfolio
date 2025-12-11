@@ -112,6 +112,17 @@ body {
     padding: 0 24px;
 }
 
+/* Center Call-To-Action button in Contact section */
+#contact {
+    text-align: center;
+}
+
+#contact .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
 .section-title {
     font-size: 36px;
     font-weight: 600;
