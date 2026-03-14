@@ -3,18 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import CaseStudy from "./components/CaseStudy";
+import FeaturedProject from "./components/FeaturedProject";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-
-const pageVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
-  },
-};
+import { pageVariants } from "./lib/animations";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,7 +21,7 @@ export default function App() {
             <span className="brand-mark">WA</span>
             <span className="brand-text">
               <strong>Muhammad Wamiq Abbasi</strong>
-              <small>IT Analyst · Software Solutions</small>
+              <small>Software Developer · Project Support & Infrastructure Analyst</small>
             </span>
           </a>
 
@@ -48,7 +40,7 @@ export default function App() {
 
           <nav id="primary-nav" className={`nav-links${menuOpen ? " is-open" : ""}`} aria-label="Primary navigation">
             <a href="#about" onClick={closeMenu}>About</a>
-            <a href="#case-study" onClick={closeMenu}>Case Study</a>
+            <a href="#featured-project" onClick={closeMenu}>BrightPath LMS</a>
             <a href="#projects" onClick={closeMenu}>Projects</a>
             <a href="#contact" className="nav-cta" onClick={closeMenu}>
               Contact <ArrowUpRight size={14} />
@@ -60,7 +52,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <CaseStudy />
+        <FeaturedProject />
         <Projects />
         <Contact />
       </main>

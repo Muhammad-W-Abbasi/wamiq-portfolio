@@ -1,19 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Database, Layers, ShieldCheck } from "lucide-react";
-
-const container = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], staggerChildren: 0.12 },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
-};
+import { ArrowUpRight } from "lucide-react";
+import { heroHighlights } from "../content/portfolioContent";
+import { cardVariants, easing, sectionVariants } from "../lib/animations";
 
 const wordContainer = {
   hidden: {},
@@ -22,22 +10,22 @@ const wordContainer = {
 
 const wordItem = {
   hidden: { opacity: 0, y: 26 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: easing } },
 };
 
-const metrics = [
-  { icon: ShieldCheck, label: "Current Focus", value: "Government IT Solutions" },
-  { icon: Database, label: "Platform Strength", value: "Power BI · SSIS · SSRS" },
-  { icon: Layers, label: "Delivery Model", value: "Agile · Multi-Client" },
+const headlineWords = [
+  "Practical",
+  "Software",
+  "for",
+  "Real",
+  "Operational",
+  "Work",
 ];
 
-const headlineWords = [
-  "Modern",
-  "Software",
-  "Solutions",
-  "for",
-  "Public-Sector",
-  "Delivery",
+const buildSignals = [
+  "Production-minded cleanup",
+  "Role-based application flows",
+  "Readable frontend architecture",
 ];
 
 export default function Hero() {
@@ -45,7 +33,7 @@ export default function Hero() {
     <motion.section
       id="hero"
       className="hero section-shell"
-      variants={container}
+      variants={sectionVariants}
       initial="hidden"
       animate="visible"
       aria-labelledby="hero-title"
@@ -56,9 +44,13 @@ export default function Hero() {
         <span className="hero-blob hero-blob-c" />
       </div>
       <div className="shell hero-grid">
-        <motion.article className="hero-main card-surface" variants={item}>
-          <motion.p className="eyebrow" variants={item}>
-            IT Analyst · Software Solutions
+        <motion.article className="hero-main card-surface" variants={cardVariants}>
+          <motion.p className="eyebrow" variants={cardVariants}>
+            Software Developer · Government of Manitoba
+          </motion.p>
+
+          <motion.p className="hero-status" variants={cardVariants}>
+            Open to software roles · Full-stack and frontend focused
           </motion.p>
 
           <motion.h1
@@ -75,19 +67,19 @@ export default function Hero() {
             ))}
           </motion.h1>
 
-          <motion.p className="hero-subtitle" variants={item}>
-            Building resilient digital tools, data products, and automation systems with a strong
-            focus on clarity, reliability, and service outcomes.
+          <motion.p className="hero-subtitle" variants={cardVariants}>
+            I build maintainable applications, internal tools, and workflow-focused systems with an
+            emphasis on readable code, reliable behavior, and software that solves real business problems.
           </motion.p>
 
-          <motion.div className="hero-actions" variants={item}>
+          <motion.div className="hero-actions" variants={cardVariants}>
             <motion.a
               className="btn btn-primary"
-              href="#projects"
+              href="#featured-project"
               whileHover={{ y: -2, scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
             >
-              View Work <ArrowUpRight size={16} />
+              View BrightPath <ArrowUpRight size={16} />
             </motion.a>
             <motion.a
               className="btn btn-secondary"
@@ -100,10 +92,30 @@ export default function Hero() {
           </motion.div>
         </motion.article>
 
-        <motion.aside className="hero-panel card-surface" variants={item} aria-label="Professional highlights">
-          <h2 className="panel-title">Highlights</h2>
+        <motion.aside className="hero-panel card-surface" variants={cardVariants} aria-label="Professional highlights">
+          <div className="hero-panel-header">
+            <p className="panel-kicker">Current Building Style</p>
+            <h2 className="panel-title">Software that is clear, useful, and production-aware</h2>
+          </div>
+
+          <div className="hero-signal card-surface" aria-hidden="true">
+            <div className="hero-signal-window">
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className="hero-signal-body">
+              {buildSignals.map((signal) => (
+                <div className="hero-signal-row" key={signal}>
+                  <span className="hero-signal-dot" />
+                  <span>{signal}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <ul className="metric-list" role="list">
-            {metrics.map(({ icon: Icon, label, value }, index) => (
+            {heroHighlights.map(({ icon: Icon, label, value }, index) => (
               <motion.li
                 className="metric-card"
                 key={label}

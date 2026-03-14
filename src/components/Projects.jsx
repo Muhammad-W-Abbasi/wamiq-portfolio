@@ -1,48 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], staggerChildren: 0.1 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-};
-
-const projectData = [
-  {
-    category: "Government Automation",
-    title: "Capital Projects Automation Suite",
-    description:
-      "Internal automation toolkit that streamlined reporting workflows and reduced repetitive data handling in large infrastructure delivery programs.",
-    tech: ["MS Fabric", "Power BI", "MS Data Platform", "Power Apps"],
-    confidential: true,
-  },
-  {
-    category: "Data Applications",
-    title: "Live Data Dashboard",
-    description:
-      "Responsive analytics interface integrating external APIs, geolocation, and data visualizations with clean component architecture.",
-    tech: ["JavaScript", "REST APIs", "Data Visualization"],
-    demo: "https://wamiq-weather.netlify.app",
-    code: "https://github.com/Muhammad-W-Abbasi/weather-app",
-  },
-  {
-    category: "Productivity Systems",
-    title: "Operations Task Manager",
-    description:
-      "Modular task-management system with persistent state, full CRUD interactions, and optimized rendering performance.",
-    tech: ["JavaScript", "localStorage", "UI Architecture"],
-    demo: "https://task-manager-wamiq.netlify.app",
-    code: "https://github.com/Muhammad-W-Abbasi/task-manager-app",
-  },
-];
+import { projects } from "../content/portfolioContent";
+import { cardVariants, sectionVariants } from "../lib/animations";
 
 export default function Projects() {
   return (
@@ -59,14 +18,14 @@ export default function Projects() {
         <motion.header className="section-header" variants={cardVariants}>
           <p className="eyebrow">Projects</p>
           <h2 id="projects-title" className="section-title">
-            Selected software and data delivery work
+            Additional projects and software work
           </h2>
         </motion.header>
 
         <motion.div className="projects-grid" variants={sectionVariants}>
-          {projectData.map((project) => (
+          {projects.map((project, index) => (
             <motion.article
-              className="project-card card-surface"
+              className={`project-card card-surface${project.confidential ? " project-card--confidential" : ""}${index === 0 ? " project-card--featured" : ""}`}
               key={project.title}
               variants={cardVariants}
               whileHover={{ y: -5, scale: 1.01 }}
