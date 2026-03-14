@@ -475,10 +475,15 @@ svg {
 }
 
 .metric-card {
+  display: grid;
+  align-content: start;
+  min-block-size: 6.25rem;
   padding: var(--space-2);
   border-radius: var(--radius-m);
   border: 0.0625rem solid var(--line);
   background: linear-gradient(180deg, #f9fbff 0%, #f3f8fd 100%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
 }
 
 .metric-label {
@@ -733,7 +738,7 @@ svg {
 }
 
 .featured-links a {
-  color: #d7ebff;
+  color: #ffffff;
 }
 
 .feature-card,

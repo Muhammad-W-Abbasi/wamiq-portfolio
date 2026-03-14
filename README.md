@@ -76,6 +76,9 @@ This portfolio highlights:
 - end-to-end delivery and production-minded cleanup
 - public-sector systems experience alongside personal software projects
 
+## Live Site
+- Portfolio: [https://wamiq-portfolio.netlify.app/](https://wamiq-portfolio.netlify.app/)
+
 ## Contact
 - Email: `muhammadabbasi1020@gmail.com`
 - GitHub: `https://github.com/Muhammad-W-Abbasi`
