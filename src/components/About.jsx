@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { aboutCapabilities } from "../content/portfolioContent";
+import { aboutBio, aboutCapabilities } from "../content/portfolioContent";
 import { cardVariants, sectionVariants } from "../lib/animations";
 
 export default function About() {
@@ -17,8 +17,9 @@ export default function About() {
         <motion.header className="section-header" variants={cardVariants}>
           <p className="eyebrow">About</p>
           <h2 id="about-title" className="section-title">
-            Practical engineering shaped by real users and real constraints
+            Software engineering grounded in product thinking and real user needs
           </h2>
+          <p className="section-copy">{aboutBio}</p>
         </motion.header>
 
         <motion.div className="feature-grid" variants={sectionVariants}>

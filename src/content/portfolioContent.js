@@ -16,41 +16,82 @@ import {
 export const heroHighlights = [
   {
     icon: ShieldCheck,
-    label: "Current Role",
-    value: "Government of Manitoba · CPPD",
+    label: "Current Focus",
+    value: "Production software and workflow systems",
   },
   {
     icon: Database,
     label: "Build Focus",
-    value: "Full-stack apps, APIs, and workflow systems",
+    value: "Java backends, React interfaces, and practical APIs",
   },
   {
     icon: Layers,
     label: "Strength",
-    value: "Readable software with practical business impact",
+    value: "Problem solving, collaboration, and maintainable delivery",
   },
 ];
 
 export const aboutCapabilities = [
   {
     icon: Database,
-    title: "Data and reporting systems",
-    text: "Designing internal reporting and workflow tools that help teams make decisions with cleaner, more reliable operational data.",
+    title: "Breaking down complex problems",
+    text: "Breaking complex operational needs into practical technical solutions with clear boundaries, reliable behavior, and maintainable implementation.",
   },
   {
     icon: Server,
-    title: "Automation and delivery",
-    text: "Reducing manual coordination through pragmatic automation, structured processes, and systems that fit how teams already work.",
+    title: "Backend systems and APIs",
+    text: "Building production workflow systems and full-stack projects that strengthen my foundation in Java, APIs, data handling, and application logic.",
   },
   {
     icon: Code2,
-    title: "Software engineering",
-    text: "Building maintainable frontend and full-stack applications with clear boundaries, predictable behavior, and clean implementation.",
+    title: "Frontend and product interfaces",
+    text: "Creating interfaces and product flows that feel clear to use, with a focus on readable frontend structure and features that reflect real user needs.",
   },
   {
     icon: Cloud,
-    title: "Stakeholder collaboration",
-    text: "Translating requirements into practical technical solutions for non-technical users, managers, and cross-functional partners.",
+    title: "Stakeholder and team collaboration",
+    text: "Working closely with stakeholders to gather requirements, refine workflows, and translate business context into software that teams can actually rely on.",
+  },
+];
+
+export const aboutBio =
+  "I’m Muhammad Wamiq Abbasi, a software developer and Computer Science student at the University of Manitoba with experience building production software and workflow systems for the Government of Manitoba. I enjoy analyzing problems, turning them into clear technical solutions, and building software that is reliable, maintainable, and useful to the people working with it every day. Alongside production systems work, I build full-stack projects that deepen my experience with Java backend development, user-facing applications, and collaborative product thinking. That perspective fits education technology well, where strong software can help create learning experiences that are flexible, dependable, and student-centered.";
+
+export const skillHighlights = [
+  {
+    label: "Best aligned for",
+    value: "Product-focused software developer roles",
+  },
+  {
+    label: "Core strengths",
+    value: "Problem decomposition, OO thinking, and maintainable code",
+  },
+  {
+    label: "Demonstrated through",
+    value: "Government production systems and BrightPath LMS",
+  },
+];
+
+export const skillGroups = [
+  {
+    title: "Core Development Foundations",
+    summary: "Computer science fundamentals and day-to-day engineering habits that map well to product software work.",
+    items: ["Java", "JavaScript", "SQL", "Object-Oriented Programming", "Debugging", "Refactoring"],
+  },
+  {
+    title: "Application & Interface Work",
+    summary: "Frontend and product-facing technologies demonstrated across portfolio projects and interface-focused development.",
+    items: ["React", "TypeScript", "HTML5", "CSS3", "REST APIs", "State Management"],
+  },
+  {
+    title: "Backend & Product Architecture",
+    summary: "Full-stack technologies showcased in BrightPath LMS to highlight backend design, security, and data persistence.",
+    items: ["Spring Boot", "PostgreSQL", "JWT Authentication", "Role-Based Access Control", "Flyway", "Rate Limiting"],
+  },
+  {
+    title: "Delivery, Data & Collaboration",
+    summary: "Production-oriented tools and practices shaped by real stakeholder work, operational data, and iterative delivery.",
+    items: ["Power Apps", "Power Automate", "Dataverse", "SharePoint", "Git", "GitHub", "Requirements Analysis", "Iterative Delivery"],
   },
 ];
 
@@ -58,9 +99,9 @@ export const featuredProject = {
   eyebrow: "Featured Project",
   title: "BrightPath LMS",
   subtitle:
-    "A full-stack learning management system built to demonstrate product thinking, backend design, and polished user workflows.",
+    "A full-stack learning management system built to demonstrate Java backend design, product thinking, and polished student and instructor workflows.",
   summary:
-    "BrightPath is a portfolio-grade LMS inspired by platforms like D2L. It supports instructor and student experiences through secure authentication, role-based access control, course enrollment, and live instructor-managed course tasks with per-student completion tracking.",
+    "BrightPath is a portfolio-grade LMS inspired by platforms like D2L. It supports student and instructor experiences through JWT authentication, role-based access control, rate-limited APIs, course enrollment, and instructor-managed course tasks with per-student completion tracking.",
   stats: [
     { value: "React", label: "Frontend application" },
     { value: "Spring Boot", label: "Backend API" },
@@ -70,21 +111,21 @@ export const featuredProject = {
     {
       icon: BriefcaseBusiness,
       title: "Product scope",
-      text: "Supports the core workflows an instructor and student actually need: authentication, course access, communication, and task tracking.",
+      text: "Models the core workflows a learning product needs: secure access, course enrollment, role-aware experiences, and student task tracking.",
     },
     {
       icon: Code2,
       title: "Engineering focus",
-      text: "Built with JWT auth, protected API endpoints, Flyway migrations, explicit role handling, and a maintainable React component structure.",
+      text: "Built with JWT auth, rate limiting, protected API endpoints, Flyway migrations, explicit role-based access control, and a maintainable React component structure.",
     },
     {
       icon: ArrowRightLeft,
-      title: "Recent enhancement",
-      text: "Replaced hard-coded assignments with a live reminder system that instructors manage and students complete individually.",
+      title: "User workflow design",
+      text: "Replaced hard-coded assignments with a live reminder system that instructors manage directly and students complete individually.",
     },
     {
       icon: CheckCircle2,
-      title: "Production polish",
+      title: "Delivery mindset",
       text: "Improved local dev resilience, fixed deployment-safe migrations, tightened dependency security, and documented setup for reviewers.",
     },
   ],
@@ -98,8 +139,8 @@ export const projects = [
     category: "Internal Systems",
     title: "Capital project workflow tooling",
     description:
-      "Internal work supporting production systems used by teams planning and delivering public infrastructure projects, with a focus on clearer workflows, reporting, and maintainable implementation.",
-    tech: ["Government IT", "Workflow Design", "Reporting", "Automation"],
+      "Production workflow systems now used by 30+ people across 5 government departments, replacing manual Excel tracking, email-based approvals, and spreadsheet reporting. Work expanded organically after a director-led show-and-tell across branches. Confidential codebase.",
+    tech: ["Power Apps", "Power Automate", "SharePoint", "Dataverse"],
     confidential: true,
   },
   {

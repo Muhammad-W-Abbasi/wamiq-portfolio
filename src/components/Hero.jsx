@@ -14,18 +14,19 @@ const wordItem = {
 };
 
 const headlineWords = [
-  "Practical",
-  "Software",
-  "for",
-  "Real",
-  "Operational",
-  "Work",
+  "Production",
+  "Software,",
+  "Shipped",
+  "and",
+  "Built",
+  "to",
+  "Last",
 ];
 
 const buildSignals = [
-  "Production-minded cleanup",
-  "Role-based application flows",
-  "Readable frontend architecture",
+  "Java and backend-focused project work",
+  "Role-based product workflows",
+  "Collaboration-driven delivery",
 ];
 
 export default function Hero() {
@@ -46,11 +47,11 @@ export default function Hero() {
       <div className="shell hero-grid">
         <motion.article className="hero-main card-surface" variants={cardVariants}>
           <motion.p className="eyebrow" variants={cardVariants}>
-            Software Developer · Government of Manitoba
+            Software Developer · Java, React, and Product-Focused Systems
           </motion.p>
 
           <motion.p className="hero-status" variants={cardVariants}>
-            Open to software roles · Full-stack and frontend focused
+            Open to software roles · Full-stack, backend, and interface focused
           </motion.p>
 
           <motion.h1
@@ -68,8 +69,8 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p className="hero-subtitle" variants={cardVariants}>
-            I build maintainable applications, internal tools, and workflow-focused systems with an
-            emphasis on readable code, reliable behavior, and software that solves real business problems.
+            I build maintainable applications and production systems with an emphasis on problem
+            solving, clean implementation, and software that helps real users do meaningful work.
           </motion.p>
 
           <motion.div className="hero-actions" variants={cardVariants}>
@@ -94,8 +95,8 @@ export default function Hero() {
 
         <motion.aside className="hero-panel card-surface" variants={cardVariants} aria-label="Professional highlights">
           <div className="hero-panel-header">
-            <p className="panel-kicker">Current Building Style</p>
-            <h2 className="panel-title">Software that is clear, useful, and production-aware</h2>
+            <p className="panel-kicker">How I build</p>
+            <h2 className="panel-title">Software that balances backend thinking, usable interfaces, and practical delivery</h2>
           </div>
 
           <div className="hero-signal card-surface" aria-hidden="true">

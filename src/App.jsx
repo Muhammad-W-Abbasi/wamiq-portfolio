@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Skills from "./components/Skills";
 import FeaturedProject from "./components/FeaturedProject";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -40,6 +41,7 @@ export default function App() {
 
           <nav id="primary-nav" className={`nav-links${menuOpen ? " is-open" : ""}`} aria-label="Primary navigation">
             <a href="#about" onClick={closeMenu}>About</a>
+            <a href="#skills" onClick={closeMenu}>Skills</a>
             <a href="#featured-project" onClick={closeMenu}>BrightPath LMS</a>
             <a href="#projects" onClick={closeMenu}>Projects</a>
             <a href="#contact" className="nav-cta" onClick={closeMenu}>
@@ -52,6 +54,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Skills />
         <FeaturedProject />
         <Projects />
         <Contact />
