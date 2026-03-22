@@ -447,6 +447,20 @@ export default function App() {
                       <span key={item}>{item}</span>
                     ))}
                   </div>
+                  {!project.confidential ? (
+                    <div className="project-links-inline">
+                      <a href={project.demo} target="_blank" rel="noreferrer">
+                        Live Demo <ArrowUpRight size={16} />
+                      </a>
+                      <a href={project.code} target="_blank" rel="noreferrer">
+                        Source <Code2 size={16} />
+                      </a>
+                    </div>
+                  ) : (
+                    <div className="project-links-inline">
+                      <span className="project-note">Links unavailable due to confidentiality.</span>
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
