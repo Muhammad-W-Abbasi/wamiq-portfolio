@@ -78,7 +78,7 @@ code {
 }
 
 .app-container {
-  width: min(100% - 4rem, 92rem);
+  width: min(100% - 5rem, 92rem);
   margin: 0 auto;
 }
 
@@ -246,7 +246,11 @@ code {
   font-size: clamp(3.35rem, 5.8vw, 5.3rem);
 }
 
-.hero-copy h1 span {
+.hero-line {
+  display: block;
+}
+
+.hero-line-accent {
   color: var(--primary);
 }
 
@@ -305,6 +309,7 @@ code {
   display: flex;
   justify-content: center;
   padding-left: 0;
+  overflow: visible;
 }
 
 .editor-mockup {
@@ -873,6 +878,17 @@ code {
   gap: 1rem;
 }
 
+.brightpath-footer-row {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.brightpath-links {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
 .brightpath-links a,
 .section-link {
   display: inline-flex;
@@ -932,6 +948,7 @@ code {
 
 .project-card p {
   margin: 0 0 1.5rem;
+  min-height: 7.75rem;
 }
 
 .about-copy {
@@ -1163,7 +1180,7 @@ code {
 
 .skill-card {
   padding: 2.5rem;
-  background: var(--surface-low);
+  background: var(--surface-high);
 }
 
 .contact-wrap {
@@ -1261,7 +1278,7 @@ code {
 
 @media (max-width: 900px) {
   .app-container {
-    width: min(100% - 2rem, 92rem);
+    width: min(100% - 2.5rem, 92rem);
   }
 
   .app-menu-button {
@@ -1292,9 +1309,18 @@ code {
   .skills-highlight-card,
   .brightpath-footer-row,
   .section-row {
-    grid-template-columns: 1fr;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-copy,
+  .hero-visual {
+    width: 100%;
   }
 
   .hero-pills {
@@ -1308,21 +1334,138 @@ code {
 }
 
 @media (max-width: 720px) {
+  body,
+  #root,
+  .app-shell {
+    overflow-x: hidden;
+  }
+
+  .app-container {
+    width: min(100% - 2rem, 92rem);
+  }
+
+  .app-nav {
+    padding: 1rem 0;
+  }
+
   .hero-copy h1,
   .section-intro h2,
   .section-row h2,
   .about-copy h2,
   .skills-heading,
   .contact-copy h2 {
-    font-size: 2.5rem;
+    font-size: 2.15rem;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 6.5rem;
+  }
+
+  .hero-grid {
+    gap: 2.25rem;
+    padding: 2.5rem 0 7.5rem;
+    overflow: visible;
+  }
+
+  .hero-copy {
+    gap: 1.25rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-copy h1 {
+    width: 100%;
+    max-width: 100%;
+    letter-spacing: -0.05em;
+    line-height: 1.08;
+  }
+
+  .hero-line {
+    display: inline;
+  }
+
+  .hero-description,
+  .section-intro p,
+  .about-text,
+  .education-intro,
+  .contact-copy p {
+    max-width: 100%;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
+    padding-top: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-primary-action,
+  .hero-secondary-action {
+    flex: 1 1 0;
+    justify-content: center;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+    min-width: 0;
+  }
+
+  .hero-visual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .editor-mockup {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .editor-body {
+    min-height: auto;
+    padding: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  .editor-line {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .hero-pills {
+    position: absolute;
+    right: 0.75rem;
+    bottom: -5.5rem;
+    left: 0.75rem;
+    width: auto;
+    gap: 0.45rem;
+    margin-top: 0;
+    align-items: stretch;
+  }
+
+  .hero-pill {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+    white-space: normal;
   }
 
   .brightpath-details-grid,
-  .about-capabilities-grid,
   .skills-grid,
   .projects-grid,
   .browser-stats {
     grid-template-columns: 1fr;
+  }
+
+  .about-capabilities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .browser-body,
@@ -1340,7 +1483,15 @@ code {
   .about-section,
   .skills-section,
   .contact-section {
-    padding: 6rem 0;
+    padding: 4.5rem 0;
+  }
+
+  .section-intro {
+    margin-bottom: 3rem;
+  }
+
+  .section-row {
+    margin-bottom: 2.25rem;
   }
 
   .detail-card,
@@ -1352,10 +1503,67 @@ code {
   }
 
   .about-panel {
-    min-height: auto;
+    min-height: 20rem;
+  }
+
+  .about-capability-card {
+    aspect-ratio: auto;
+    min-height: 6.75rem;
+    justify-content: flex-start;
+    padding: 0.95rem;
+  }
+
+  .about-capability-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-capability-card h3 {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .education-visual-copy h3 {
+    font-size: 1.7rem;
+  }
+
+  .education-panel,
+  .about-text {
+    min-height: 100%;
+  }
+
+  .education-panel {
+    gap: 0.75rem;
+  }
+
+  .education-intro {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .education-list {
+    gap: 0.6rem;
+  }
+
+  .education-card {
+    padding: 0.85rem 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .education-card span {
+    margin-bottom: 0.35rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+
+  .education-card h3 {
+    font-size: 1rem;
+    line-height: 1.25;
   }
 
   .contact-links {
     flex-wrap: wrap;
+    padding-top: 1rem;
   }
 }

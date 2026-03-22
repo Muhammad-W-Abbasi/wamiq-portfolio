@@ -153,11 +153,9 @@ export default function App() {
           <div className="app-container hero-grid">
             <div className="hero-copy">
               <h1>
-                Production Software,
-                <br />
-                <span>Shipped and Built</span>
-                <br />
-                to Last.
+                <span className="hero-line">Production Software,</span>{" "}
+                <span className="hero-line hero-line-accent">Shipped and Built</span>{" "}
+                <span className="hero-line">to Last.</span>
               </h1>
               <p className="hero-description">
                 I build maintainable applications and production systems with an emphasis on problem
@@ -442,7 +440,10 @@ export default function App() {
                   <h3>{project.title}</h3>
                   <p>{project.confidential ? experienceProjectSummary : project.description}</p>
                   <div className="project-tech">
-                    {project.tech.map((item) => (
+                    {[
+                      ...project.tech,
+                      ...(project.title === "Weather application" ? ["Responsive UI", "Error States"] : []),
+                    ].map((item) => (
                       <span key={item}>{item}</span>
                     ))}
                   </div>
